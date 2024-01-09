@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Website - Playlists</title>
+    <a href="{{ url_for('musicmain') }}">Home</a>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #001f3f; 
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+ .search-bar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .album-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .album-item {
+            background-color: #a6c8e0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .album-link {
+            text-decoration: none;
+            color: #333; /* Adjust the color as needed */
+            font-weight: bold;
+        }
+.search-input {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .search-button {
+            padding: 8px;
+            cursor: pointer;
+        }
+.favorite-icon,
+        .playlist-icon {
+            cursor: pointer;
+            font-size: 24px; /* Adjust the font size as needed */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Musicana - Albums</h1>
+<a href="{{ url_for('musicmain') }}">Home</a>
+        <a href="{{ url_for('albumhome') }}" class="albums-link">Albums</a>
+        <a href="{{ url_for('playlist') }}" class="playlists-link">Playlists</a>
+       <a href="{{ url_for('billboard') }}">Billboard Chart Data</a>
+<a href="{{ url_for('Favourites') }}">Favourites</a>
+<a href="{{ url_for('datavisualisation') }}">Trends</a>
+<a href="{{ url_for('query') }}" class="logout-link">Queries</a>
+<a href="{{ url_for('login') }}" class="logout-link">Logout</a>
+
+    </header>
+<div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search albums...">
+        <button class="search-button">Search</button>
+    </div>
+
+    <ul class="album-list">
+        <li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1712032095&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>1989 (Taylor's Version)</h3>
+ <p>Taylor Swift</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+        <li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1669410323&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>Daylight</h3>
+ <p>David Kushner</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1617712912&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>For Your Soul</h3>
+ <p>Megadrumz</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/249938232&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>Fantasia</h3>
+ <p>Fantasia</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1440193666&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>Harry's House</h3>
+ <p>Harry Styles</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1311200302&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>Somebodys Watching Me</h3>
+ <p>Rockwell</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1593398509&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>NINI na NINI</h3>
+ <p>Mas Musiq</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1684482987&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>Guts</h3>
+ <p>Olivia Rodrigo</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1589617072&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>LA VIDA ES UNA</h3>
+ <p>Myke Towers</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+<li class="album-item">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1694572938&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+ <h3>Strangers</h3>
+ <p>Kenya Grace</p>
+<span class="favorite-icon" onclick="addToFavorites(this)">❤️</span>
+             <span class="playlist-icon" onclick="addToPlaylist(this)">➕</span>
+        </li>
+
+        <!-- Add more playlist items as needed -->
+    </ul>
+<script>
+        // JavaScript code to handle adding songs to favorites and playlists
+        function addToFavorites(element) {
+            // You can implement your logic here to handle adding to favorites
+            // For now, let's just alert that the song is added to favorites
+            alert('Added to favorites!');
+        }
+ 
+        function addToPlaylist(element) {
+            // You can implement your logic here to handle adding to the playlist
+            // For now, let's just alert that the song is added to the playlist
+            alert('Added to playlist!');
+        }
+document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.querySelector('.search-input');
+        const searchButton = document.querySelector('.search-button');
+        const songList = document.querySelector('.song-list');
+ 
+        searchButton.addEventListener('click', function () {
+            const searchTerm = searchInput.value.toLowerCase();
+ 
+            // Loop through each song card and hide/show based on the search term
+            const songCards = document.querySelectorAll('.song-card');
+            songCards.forEach(function (card) {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('https://st2.depositphotos.com/1433253/7287/i/450/depositphotos_72872771-stock-photo-multicolor-music-notes-background.jpg') center/cover            no-repeat;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+color: #fff;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sign Up</h1>
+    </header>
+
+    <form id="signupForm" onsubmit="return validateForm()">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label for="repassword">Re-enter Password:</label>
+        <input type="password" id="repassword" name="repassword" required>
+
+  <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="login-link">
+        <p>If you already have an account, <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+
+    <script>
+        function validateForm() {
+            var fullname = document.getElementById('fullname').value;
+            var email = document.getElementById('email').value;
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var repassword = document.getElementById('repassword').value;
+
+            // Simple validation
+            if (fullname === "" || email === "" || username === "" || password === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+            if (password !== repassword) {
+                alert("Sign up successful");
+                return false;
+            }
+            alert("Sign-up is successful!");
+            window.location.href = "{{ url_for('login') }}";
+
+            // You might want to add more validation logic here if needed.
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>

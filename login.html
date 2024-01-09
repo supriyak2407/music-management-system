@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://img.freepik.com/premium-photo/headphone-with-audio-spectrum-wave-futuristic-background-music-abstract-backgroundgenerative-ai_218381-14946.jpg?size=338&ext=jpg&ga=GA1.1.1826414947.1699660800&semt=ais') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+ header {
+        text-align: center;
+        margin-bottom: 20px;
+        color: white; /* Set font color to white */
+    }
+
+    header h1 {
+        font-weight: bold; /* Make the font bold */
+    }
+
+    form {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 250px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    button, .signup-link a {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 5px 10px; /* Adjust padding for a smaller button */
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from links */
+        display: inline-block; /* Make links and buttons inline-block */
+        width: 100%; /* Full width for buttons and links */
+        text-align: center; /* Center text within buttons and links */
+        font-weight: bold; /* Make the font bold */
+        font-size: 14px; /* Set font size */
+    }
+
+    button:hover, .signup-link a:hover {
+        background-color: #45a049;
+    }
+
+    .signup-link {
+        margin-top: 10px;
+        color: white; /* Set font color to white */
+        font-weight: bold; /* Make the font bold */
+    }
+</style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Musicana</h1>
+        <h2>User Login</h2>
+        
+    </header>
+
+    <form id="loginForm" onsubmit="return validateForm()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required autocomplete="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="signup-link">
+        <p>If you are a new user, <a href="{{ url_for('signup') }}">Sign Up</a></p>
+    </div>
+
+    <script>
+        function validateForm() {
+    console.log('Script is running!');
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Simple validation
+    if (username === "" || password === "") {
+        alert("Username and password must be filled out");
+        return false;
+    }
+
+    // Send a request to the server to validate credentials
+    fetch("/validate_login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username, password }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.valid) {
+            alert('Login successful. Redirect to musicmain');
+            window.location.href = "{{ url_for('musicmain') }}";
+        } else {
+            alert('Invalid username or password');
+        }
+    })
+    .catch(error => {
+        console.error('Error during login:', error);
+        alert('An error occurred during login');
+    });
+
+    return false; // Add this line to prevent form submission
+}
+
+    </script>
+
+</body>
+
+</html>
