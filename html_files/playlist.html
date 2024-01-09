@@ -24,7 +24,6 @@ header {
             margin: 0 10px;
         }
 
-        /* Add your styles specific to the playlist page */
         .remove-icon {
             cursor: pointer;
         }
@@ -43,14 +42,11 @@ header {
 <a href="{{ url_for('query') }}" class="logout-link">Queries</a>
 <a href="{{ url_for('login') }}" class="logout-link">Logout</a>
 
-<!-- Add other navigation links as needed -->
 </header>
  
     <div class="song-list" id="playlist-list">
-<!-- Playlist songs will be dynamically added here -->
 </div>
  
-    <!-- Include your scripts here -->
 <script>
         document.addEventListener('DOMContentLoaded', function () {
             const playlistList = document.getElementById('playlist-list');
