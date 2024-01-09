@@ -26,6 +26,10 @@ Musicana is a robust Music Management System designed to meet the diverse needs 
 - Many-to-Many, One-to-Many, Many-to-One, One-to-One relations identified.
 - Normalization in the 3rd Normal Form for efficient and structured data.
 
+### Final ERD
+
+![ERD Image]("C:\Users\91998\Desktop\musicfinalproject.jpg")
+
 
 ## Use of Triggers, Functions, Stored Procedures, and Views
 
