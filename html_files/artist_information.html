@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Information</title>
+</head>
+<body>
+    <h2>Artist Information</h2>
+    {% if artist_info %}
+        <p>Artist Name: {{ artist_info[0] }}</p>
+        <p>Birthdate: {{ artist_info[1] }}</p>
+        <p>Gender: {{ artist_info[2] }}</p>
+        <p>Height: {{ artist_info[3] }}</p>
+        <p>Nationality: {{ artist_info[4] }}</p>
+    {% else %}
+        <p>Artist not found</p>
+    {% endif %}
+</body>
+</html>
