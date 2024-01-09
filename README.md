@@ -27,9 +27,6 @@ Musicana is a robust Music Management System designed to meet the diverse needs 
 - Many-to-Many, One-to-Many, Many-to-One, One-to-One relations identified.
 - Normalization in the 3rd Normal Form for efficient and structured data.
 
-### Final ERD
-
-[ERD Image Here]
 
 ## Use of Triggers, Functions, Stored Procedures, and Views
 
@@ -87,15 +84,4 @@ Data primarily from Spotify Datasets on Kaggle, including artists.csv and tracks
 
 Musicana, our Music Management System, offers an immersive music experience. Although a sophisticated recommendation system was not included due to time constraints, the system is poised for future enhancements. The use of SQL queries and analytical tools adds a unique dimension to the platform.
 
-## Recommendations for Future Students
-
-- Plan early, prioritize tasks.
-- Adopt a modular approach for flexibility.
-- Foster collaboration within the team.
-- Consider flexible architecture for future developments.
-
 ---
-
-Feel free to contact us for any inquiries or collaboration opportunities.
-
-Enjoy the music with Musicana! 🎵
