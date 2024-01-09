@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trends</title>
-    <!-- Include Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
  header {
@@ -13,7 +12,7 @@
             background-color: #333;
             color: #fff;
             padding: 10px;
-width: 100%; /* Add this rule to make the header full width */
+width: 100%; 
     box-sizing: border-box; /
         }
 
@@ -44,7 +43,7 @@ body {
             width: 1000px;
             height: 800px;
             margin-top: 20px;
-            display: none; /* Initially hide all charts */
+            display: none; 
         }
 
         label {
@@ -75,8 +74,6 @@ body {
     </header>
 
 
-    <!-- Dropdown button to select chart -->
-    <!-- Dropdown button to select chart -->
 <label for="chartSelect">Select Trend:</label>
 <select id="chartSelect" onchange="toggleChart()">
     <option value="select" selected>Select</option>
