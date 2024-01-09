@@ -1,4 +1,3 @@
-# music-management-system
 # Musicana - Music Management System
 
 ## Project Overview
