@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Favorites - Music Website</title>
-<!-- Add your styles here -->
  
 <style>
 body{
@@ -24,7 +23,6 @@ header {
             margin: 0 10px;
         }
 
-        /* Add your styles specific to the favorites page */
         .remove-icon {
             cursor: pointer;
         }
@@ -44,14 +42,13 @@ header {
 <a href="{{ url_for('query') }}" class="logout-link">Queries</a>
 <a href="{{ url_for('login') }}" class="logout-link">Logout</a>
 
-<!-- Add other navigation links as needed -->
 </header>
  
     <div class="song-list" id="favorites-list">
-<!-- Favorite songs will be dynamically added here -->
+
 </div>
  
-  <!-- Include your scripts here -->
+  
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const favoritesList = document.getElementById('favorites-list');
