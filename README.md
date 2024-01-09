@@ -83,7 +83,7 @@ Data primarily from Spotify Datasets on Kaggle, including artists.csv and tracks
 2. User Activity - Daily user activity chart.
 3. Song Length Distribution - Distribution of song lengths.
 
-The final ERD and the application snippets can be seen in the images.pdf file.
+The final ERD and the application snippets can be seen in the images.pdf file. The SQL commands used to create the stored procedures, views and triggers can be seen in the sqlcommands.pdf file.
 
 ## Conclusion
 
