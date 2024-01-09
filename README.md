@@ -83,6 +83,8 @@ Data primarily from Spotify Datasets on Kaggle, including artists.csv and tracks
 2. User Activity - Daily user activity chart.
 3. Song Length Distribution - Distribution of song lengths.
 
+The final ERD and the application snippets can be seen in the images.pdf file.
+
 ## Conclusion
 
 Musicana, our Music Management System, offers an immersive music experience. Although a sophisticated recommendation system was not included due to time constraints, the system is poised for future enhancements. The use of SQL queries and analytical tools adds a unique dimension to the platform.
